@@ -1,6 +1,7 @@
 import 'package:app_filmes/application/ui/loaders/loader_mixin.dart';
 import 'package:app_filmes/application/ui/mesages/messages_mixin.dart';
 import 'package:app_filmes/services/login/login_service.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 class LoginController extends GetxController with LoaderMixin, MessagesMixin {
@@ -25,8 +26,8 @@ class LoginController extends GetxController with LoaderMixin, MessagesMixin {
       message(MessageModel.info(title: 'Sucesso', message: 'Login efetuado com sucesso'));
     } catch (e, s) {
       loading(false);
-      print(e);
-      print(s);
+      debugPrint(e.toString());
+      debugPrint(s.toString());
       message(MessageModel.error(title: 'Erro', message: 'Erro ao realizar o login'));
     }
   }
