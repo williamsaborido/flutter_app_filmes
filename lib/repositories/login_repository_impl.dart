@@ -10,11 +10,20 @@ class LoginRepositoryImpl implements LoginRepository {
     final googleAuth = await googleUser?.authentication;
 
     if (googleAuth != null) {
-      final credential = GoogleAuthProvider.credential(accessToken: googleAuth.accessToken, idToken: googleAuth.idToken);
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
 
       return FirebaseAuth.instance.signInWithCredential(credential);
     }
 
     throw Exception('Erro ao realizar o login com o Google');
+  }
+
+  @override
+  Future logout() async {
+    await GoogleSignIn().signOut();
+    FirebaseAuth.instance.signOut();
   }
 }

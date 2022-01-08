@@ -19,7 +19,7 @@ class LoginPage extends GetView<LoginController> {
             fit: BoxFit.cover,
           ),
           Container(
-            color: Colors.black45,
+            color: Colors.black.withOpacity(0.45),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 80),

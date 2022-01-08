@@ -22,6 +22,14 @@
           }
         },
         {
+          "client_id": "255729107645-pc1s1p57203sf4vjbsfs7s74mcgip1ii.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.academiadoflutter.app_filmes",
+            "certificate_hash": "20df57aa7d146ab1e716307622744dbc0e89c558"
+          }
+        },
+        {
           "client_id": "255729107645-ho2vl612p8325qiltgdgev2hhrqdl3nn.apps.googleusercontent.com",
           "client_type": 3
         }
