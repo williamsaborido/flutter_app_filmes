@@ -1,13 +1,23 @@
+import 'package:app_filmes/modules/movies/widgets/movies_filters.dart';
+import 'package:app_filmes/modules/movies/widgets/movies_group.dart';
+import 'package:app_filmes/modules/movies/widgets/movies_header.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MoviesPage extends StatelessWidget {
   const MoviesPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Estou na Movies Page'),
+    return SizedBox(
+      width: Get.width,
+      child: ListView(
+        children: const [
+          MoviesHeader(),
+          MoviesFilters(),
+          MoviesGroup(title: 'Populares'),
+          MoviesGroup(title: 'Top filmes'),
+        ],
       ),
     );
   }
