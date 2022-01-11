@@ -1,5 +1,4 @@
 import 'package:app_filmes/modules/movie_detail/widget/movie_detail_content/movie_detail_content.dart';
-import 'package:app_filmes/modules/movie_detail/widget/movie_detail_content/movie_detail_content_title.dart';
 import 'package:app_filmes/modules/movie_detail/widget/movie_detail_header.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';

@@ -2,7 +2,6 @@ import 'package:app_filmes/application/ui/loaders/loader_mixin.dart';
 import 'package:app_filmes/application/ui/mesages/messages_mixin.dart';
 import 'package:app_filmes/models/movie_detail_model.dart';
 import 'package:app_filmes/services/movies/movies_service.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MovieDetailController extends GetxController
@@ -35,7 +34,6 @@ class MovieDetailController extends GetxController
       movie(movieDetailData);
       loading(false);
     } catch (e, s) {
-      debugPrint('Erro ao buscar o filme: ${e.toString()} ${s.toString()}');
       loading(false);
       message(MessageModel.error(
           title: 'Filme',

@@ -3,7 +3,6 @@ import 'package:app_filmes/models/movie_detail_model.dart';
 import 'package:app_filmes/models/movie_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
-import 'package:flutter/material.dart';
 
 import './movies_repository.dart';
 
@@ -36,7 +35,6 @@ class MoviesRepositoryImpl implements MoviesRepository {
     );
 
     if (result.hasError) {
-      debugPrint('Erro ao buscar os filmes populares: ${result.statusText}');
       throw Exception(
           'Erro ao buscar os filmes populares: ${result.statusText}');
     }
@@ -67,7 +65,6 @@ class MoviesRepositoryImpl implements MoviesRepository {
     );
 
     if (result.hasError) {
-      debugPrint('Erro ao buscar os filmes populares: ${result.statusText}');
       throw Exception(
           'Erro ao buscar os filmes populares: ${result.statusText}');
     }
@@ -88,7 +85,6 @@ class MoviesRepositoryImpl implements MoviesRepository {
     });
 
     if (result.hasError) {
-      debugPrint('Erro ao buscar o filme: ${result.statusText}');
       throw Exception('Erro ao buscar o filme: ${result.statusText}');
     }
 
@@ -113,8 +109,7 @@ class MoviesRepositoryImpl implements MoviesRepository {
 
         await favoriteData.docs.first.reference.delete();
       }
-    } catch (e, s) {
-      debugPrint('Erro: $e - $s');
+    } catch (e) {
       throw Exception('Erro ao gravar favorito: $e');
     }
   }

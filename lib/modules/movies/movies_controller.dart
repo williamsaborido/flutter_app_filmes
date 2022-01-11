@@ -3,7 +3,6 @@ import 'package:app_filmes/application/ui/mesages/messages_mixin.dart';
 import 'package:app_filmes/models/genre_model.dart';
 import 'package:app_filmes/models/movie_model.dart';
 import 'package:app_filmes/services/movies/movies_service.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:app_filmes/services/genres/genres_service.dart';
@@ -43,11 +42,9 @@ class MoviesController extends GetxController with MessagesMixin {
       genres.assignAll(genresData);
 
       getMovies();
-    } catch (e, s) {
-      debugPrint('Erro: $e - $s');
+    } catch (e) {
       _message(MessageModel.error(
-          title: 'Gêneros',
-          message: 'Erro ao carregar dados da página : ${e.toString()}'));
+          title: 'Gêneros', message: 'Erro ao carregar dados da página : $e'));
     }
   }
 
@@ -78,8 +75,7 @@ class MoviesController extends GetxController with MessagesMixin {
       popularMoviesOriginal = popularMoviesData;
       topRatedMovies.assignAll(topRatedMoviesData);
       topRatedMoviesOriginal = topRatedMoviesData;
-    } catch (e, s) {
-      debugPrint('Erro: $e - $s');
+    } catch (e) {
       rethrow;
     }
   }

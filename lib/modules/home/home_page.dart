@@ -15,7 +15,6 @@ class HomePage extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Obx(() {
-        debugPrint('controller.pageIndex = ${controller.pageIndex}');
         return BottomNavigationBar(
           selectedItemColor: context.themeRed,
           unselectedItemColor: context.themeGray,

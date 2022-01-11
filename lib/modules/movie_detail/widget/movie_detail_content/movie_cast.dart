@@ -1,6 +1,7 @@
 import 'package:app_filmes/application/ui/theme_extensions.dart';
 import 'package:app_filmes/models/cast_model.dart';
 import 'package:flutter/material.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class MovieCast extends StatelessWidget {
   final CastModel? cast;
@@ -17,8 +18,9 @@ class MovieCast extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            child: Image.network(
-              cast!.image,
+            child: FadeInImage.memoryNetwork(
+              placeholder: kTransparentImage,
+              image: cast!.image,
               width: 85,
               height: 85,
               fit: BoxFit.cover,

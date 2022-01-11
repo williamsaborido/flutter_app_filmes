@@ -10,7 +10,7 @@ class MovieDetailModule extends Module {
   List<GetPage> routers = [
     GetPage(
       name: '/movie/detail',
-      page: () => MovieDetailPage(),
+      page: () => const MovieDetailPage(),
       binding: MovieDetailBindings(),
     )
   ];

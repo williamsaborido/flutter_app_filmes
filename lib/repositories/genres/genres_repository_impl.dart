@@ -1,7 +1,6 @@
 import 'package:app_filmes/application/rest_client/rest_client.dart';
 import 'package:app_filmes/models/genre_model.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
-import 'package:flutter/material.dart';
 
 import './genres_repository.dart';
 
@@ -31,7 +30,6 @@ class GenresRepositoryImpl implements GenresRepository {
     );
 
     if (result.hasError) {
-      debugPrint(result.statusText);
       throw Exception('Erro ao buscar os gêneros');
     }
 
