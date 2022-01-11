@@ -23,7 +23,7 @@ class MovieModel {
       'title': title,
       'release_date': releaseDate,
       'poster_path': posterPath,
-      'genres_ids': genres,
+      'genre_ids': genres,
       'favorite': favorite,
     };
   }
@@ -33,7 +33,7 @@ class MovieModel {
       id: map['id']?.toInt() ?? 0,
       title: map['title'] ?? '',
       releaseDate: map['release_date'] ?? '',
-      posterPath: 'https://image.tmdb.org/t/p/w200/${map['poster_path'] ?? ''}',
+      posterPath: map['poster_path'],
       genres: List<int>.from(map['genre_ids']),
       favorite: map['favorite'] ?? false,
     );
@@ -43,4 +43,22 @@ class MovieModel {
 
   factory MovieModel.fromJson(String source) =>
       MovieModel.fromMap(json.decode(source));
+
+  MovieModel copyWith({
+    int? id,
+    String? title,
+    String? releaseDate,
+    String? posterPath,
+    List<int>? genres,
+    bool? favorite,
+  }) {
+    return MovieModel(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      releaseDate: releaseDate ?? this.releaseDate,
+      posterPath: posterPath ?? this.posterPath,
+      genres: genres ?? this.genres,
+      favorite: favorite ?? this.favorite,
+    );
+  }
 }
