@@ -6,7 +6,7 @@ class HomeController extends GetxController {
   static const INDEX_PAGE_EXIT = 2;
 
   final LoginService _loginService;
-  final pages = ['/movies', '/favorites'];
+  final _pages = ['/movies', '/favorites'];
   final _pageIndex = 0.obs;
 
   int get pageIndex => _pageIndex.value;
@@ -20,7 +20,7 @@ class HomeController extends GetxController {
     if (page == INDEX_PAGE_EXIT) {
       _loginService.logout();
     } else {
-      Get.offNamed(pages[page], id: NAVIGATOR_KEY);
+      Get.offNamed(_pages[page], id: NAVIGATOR_KEY);
     }
   }
 }

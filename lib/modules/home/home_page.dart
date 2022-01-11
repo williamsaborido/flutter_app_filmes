@@ -1,5 +1,6 @@
 import 'package:app_filmes/application/ui/filmes_app_icons_icons.dart';
 import 'package:app_filmes/application/ui/theme_extensions.dart';
+import 'package:app_filmes/modules/favorites/favorites_bindings.dart';
 import 'package:app_filmes/modules/favorites/favorites_page.dart';
 import 'package:app_filmes/modules/home/home_controller.dart';
 import 'package:app_filmes/modules/movies/movies_bindings.dart';
@@ -19,9 +20,7 @@ class HomePage extends GetView<HomeController> {
           selectedItemColor: context.themeRed,
           unselectedItemColor: context.themeGray,
           currentIndex: controller.pageIndex,
-          onTap: (int page) {
-            controller.goToPage(page);
-          },
+          onTap: controller.goToPage,
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.movie),
@@ -53,6 +52,7 @@ class HomePage extends GetView<HomeController> {
             return GetPageRoute(
               settings: settings,
               page: () => const FavoritesPage(),
+              binding: FavoritesBindings(),
             );
           }
           return null;
